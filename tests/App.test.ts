@@ -12,15 +12,15 @@ describe('formatText', () => {
         expect(formatText('hello+world!')).toBe('hello + world!')
     })
 
-    it('should pad minus with spaces if plus is present', () => {
+    it('should pad minus with spaces if minus is present', () => {
         expect(formatText('3−2')).toBe('3 − 2')
     })
 
-    it('should pad times with spaces if plus is present', () => {
+    it('should pad times with spaces if times is present', () => {
         expect(formatText('8×4')).toBe('8 × 4')
     })
 
-    it('should pad divide with spaces if plus is present', () => {
+    it('should pad divide with spaces if divide is present', () => {
         expect(formatText('355÷113')).toBe('355 ÷ 113')
     })
 
