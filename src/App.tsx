@@ -1,11 +1,11 @@
-import Calculator from './components/Calculator/Calculator'
+import CalculatorBackground from './components/CalculatorBackground/CalculatorBackground'
 import CalculatorButton, { ButtonType } from './components/CalculatorButton/CalculatorButton'
 import CalculatorScreen from './components/CalculatorScreen/CalculatorScreen'
 
 export default function App() {
     return (
         <>
-            <Calculator>
+            <CalculatorBackground>
                 <CalculatorScreen text={'9+28'}/>
 
                 <CalculatorButton buttonType={ButtonType.symbols}>C</CalculatorButton>
@@ -33,7 +33,7 @@ export default function App() {
                 <CalculatorButton buttonType={ButtonType.numeric}>.</CalculatorButton>
                 <CalculatorButton buttonType={ButtonType.equals}>=</CalculatorButton>
 
-            </Calculator>
+            </CalculatorBackground>
         </>
     )
 }
