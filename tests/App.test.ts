@@ -27,12 +27,16 @@ describe('formatText', () => {
     it('should pad equals with space on the right side if equals is present', () => {
         expect(formatText('=1729')).toBe('= 1729')
     })
+
+    it('should not pad spaces next to parenthesis unless one of the other keys are present', () => {
+        expect(formatText('3+(4×5)')).toBe('3 + (4 × 5)')
+    })
 })
 
-describe('addParenthesis', () => {
+// describe('addParenthesis', () => {
     
-})
+// })
 
-describe('evaluateText', () => {
+// describe('evaluateText', () => {
     
-})
+// })
