@@ -28,7 +28,7 @@ export default function App() {
                 <CalculatorButton buttonType={ButtonType.numeric}>3</CalculatorButton>
                 <CalculatorButton buttonType={ButtonType.symbols}>+</CalculatorButton>
 
-                <CalculatorButton buttonType={ButtonType.numeric}>+/−</CalculatorButton>
+                <CalculatorButton buttonType={ButtonType.numeric}>+/-</CalculatorButton>
                 <CalculatorButton buttonType={ButtonType.numeric}>0</CalculatorButton>
                 <CalculatorButton buttonType={ButtonType.numeric}>.</CalculatorButton>
                 <CalculatorButton buttonType={ButtonType.equals}>=</CalculatorButton>
