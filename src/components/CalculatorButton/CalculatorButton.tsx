@@ -7,8 +7,7 @@ export const ButtonType = {
     equals: 'equals'
 } as const
 
-type ObjectValues<T> = T[keyof T]
-type ButtonType = ObjectValues<typeof ButtonType>
+type ButtonType = keyof typeof ButtonType
 
 export default function CalculatorButton({ buttonType, text, onClick }: { buttonType: ButtonType, text: ReactNode, onClick?: () => void}): ReactElement {
     return (
