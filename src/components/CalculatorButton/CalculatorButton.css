@@ -1,0 +1,30 @@
+:root {
+    --button-text-color: #FFFFFF;
+    --numeric-background-color: #F98220;
+    --symbols-background-color: #E1BB54;
+    --equals-background-color: white;
+}
+
+.calculator-button {
+    padding-bottom: px;
+    margin: 14px;
+    width: 54px;
+    height: 54px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--button-text-color)
+}
+
+.calculator-button-numeric {
+    background-color: var(--numeric-background-color);
+}
+
+.calculator-button-symbols {
+    background-color: var(--symbols-background-color);
+}
+
+.calculator-button-equals {
+    background-color: var(--equals-background-color);
+}
