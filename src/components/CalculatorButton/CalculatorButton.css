@@ -1,8 +1,13 @@
 :root {
     --button-text-color: #FFFFFF;
+
     --numeric-background-color: #F98220;
     --symbols-background-color: #E1BB54;
     --equals-background-color: #EEE316;
+
+    --numeric-background-color-hover: #E0751D;
+    --symbols-background-color-hover: #CAA84C;
+    --equals-background-color-hover: #D6CC14;
 }
 
 .calculator-button {
@@ -22,10 +27,22 @@
     background-color: var(--numeric-background-color);
 }
 
+.calculator-button-numeric:hover {
+    background-color: var(--numeric-background-color-hover);
+}
+
 .calculator-button-symbols {
     background-color: var(--symbols-background-color);
 }
 
+.calculator-button-symbols:hover {
+    background-color: var(--symbols-background-color-hover);
+}
+
 .calculator-button-equals {
     background-color: var(--equals-background-color);
+}
+
+.calculator-button-equals:hover {
+    background-color: var(--equals-background-color-hover);
 }
