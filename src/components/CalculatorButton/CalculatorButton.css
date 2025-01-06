@@ -2,16 +2,17 @@
     --button-text-color: #FFFFFF;
     --numeric-background-color: #F98220;
     --symbols-background-color: #E1BB54;
-    --equals-background-color: white;
+    --equals-background-color: #F1E500;
 }
 
 .calculator-button {
     padding-bottom: px;
-    margin: 14px;
+    margin: 14px 7px;
     width: 54px;
     height: 54px;
     border-radius: 10px;
     display: flex;
+    float: left;
     justify-content: center;
     align-items: center;
     color: var(--button-text-color)

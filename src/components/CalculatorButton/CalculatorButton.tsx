@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import './CalculatorButton.css'
 
 export enum ButtonType {
@@ -7,8 +7,8 @@ export enum ButtonType {
     equals = 'equals'
 }
 
-export default function CalculatorButton({ text, buttonType }: { text: string, buttonType: ButtonType}): ReactElement {
+export default function CalculatorButton({ buttonType, children }: { buttonType: ButtonType, children: ReactNode}): ReactElement {
     return (
-        <div className={`calculator-button calculator-button-${buttonType}`}>{text}</div>
+        <div className={`calculator-button calculator-button-${buttonType}`}>{children}</div>
     )
 }

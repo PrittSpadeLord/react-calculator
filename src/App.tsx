@@ -3,9 +3,13 @@ import CalculatorButton, { ButtonType } from './components/CalculatorButton/Calc
 export default function App() {
     return (
         <>
-            <CalculatorButton text="C" buttonType={ButtonType.symbols}/>
+            <CalculatorButton buttonType={ButtonType.symbols}>C</CalculatorButton>
 
-            <CalculatorButton text="7" buttonType={ButtonType.numeric}/>
+            <CalculatorButton buttonType={ButtonType.numeric}>7</CalculatorButton>
+
+            <CalculatorButton buttonType={ButtonType.equals}>=</CalculatorButton>
+
+            <CalculatorButton buttonType={ButtonType.numeric}>+/−</CalculatorButton>
         </>
     )
 }
