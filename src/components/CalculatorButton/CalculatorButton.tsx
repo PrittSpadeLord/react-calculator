@@ -1,11 +1,14 @@
 import { ReactElement, ReactNode } from 'react';
 import './CalculatorButton.css'
 
-export enum ButtonType {
-    numeric = 'numeric',
-    symbols = 'symbols',
-    equals = 'equals'
-}
+export const ButtonType = {
+    numeric: 'numeric',
+    symbols: 'symbols',
+    equals: 'equals'
+} as const
+
+type ObjectValues<T> = T[keyof T]
+type ButtonType = ObjectValues<typeof ButtonType>
 
 export default function CalculatorButton({ buttonType, text, onClick }: { buttonType: ButtonType, text: ReactNode, onClick?: () => void}): ReactElement {
     return (
