@@ -1,4 +1,5 @@
 import CalculatorButton, { ButtonType } from './components/CalculatorButton/CalculatorButton'
+import CalculatorScreen from './components/CalculatorScreen/CalculatorScreen'
 
 export default function App() {
     return (
@@ -9,7 +10,9 @@ export default function App() {
 
             <CalculatorButton buttonType={ButtonType.equals}>=</CalculatorButton>
 
-            <CalculatorButton buttonType={ButtonType.numeric}>+/−</CalculatorButton>
+            <CalculatorButton buttonType={ButtonType.numeric}>+/&minus;</CalculatorButton>
+
+            <CalculatorScreen text={'9+28'} />
         </>
     )
 }

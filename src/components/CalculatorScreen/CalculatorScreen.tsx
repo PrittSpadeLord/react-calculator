@@ -1,7 +1,8 @@
-export default function CalculatorScreen() {
+import { ReactElement } from 'react'
+import './CalculatorScreen.css'
+
+export default function CalculatorScreen({ text }: { text: string }): ReactElement {
     return (
-        <>
-            //more will be added later
-        </>
+        <div className="calculator-screen">{ text }</div>
     )
 }

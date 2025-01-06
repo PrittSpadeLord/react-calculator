@@ -1,0 +1,16 @@
+:root {
+    --screen-background-color: #fffbac;
+    --screen-text-color: #803900;
+}
+
+.calculator-screen {
+    width: 248px;
+    height: 90px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--screen-background-color);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: var(--screen-text-color);
+}
