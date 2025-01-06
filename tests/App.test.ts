@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { formatText } from '../src/App'
+import { formatText, addParenthesis, evaluateText } from '../src/App'
 
 describe('formatText', () => {
     //with how the function is implemented, it is impossible to add spaces to the input text, so we dont have to worry about that
@@ -27,4 +27,12 @@ describe('formatText', () => {
     it('should pad equals with space on the right side if equals is present', () => {
         expect(formatText('=1729')).toBe('= 1729')
     })
+})
+
+describe('addParenthesis', () => {
+    
+})
+
+describe('evaluateText', () => {
+    
 })

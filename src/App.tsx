@@ -7,7 +7,15 @@ export function formatText(text: string): string {
     return text.replace(/\+/g, ' + ').replace(/−/g, ' − ').replace(/×/g, ' × ').replace(/÷/g, ' ÷ ').replace(/=/, '= ')
 }
 
+export function addParenthesis(text: string): string {
+
+    //needs to be implemented further
+    return text
+}
+
 export function evaluateText(text: string): string {
+
+    //needs to be implemented further
     return '=Testing!'
 }
 
@@ -21,7 +29,7 @@ export default function App() {
                 <CalculatorScreen text={formatText(text)}/>
 
                 <CalculatorButton buttonType={ButtonType.symbols} text={'C'} onClick={() => {setText(text.startsWith('=') ? '' : text.substring(0, text.length - 1))}} />
-                <CalculatorButton buttonType={ButtonType.symbols} text={'()'} />
+                <CalculatorButton buttonType={ButtonType.symbols} text={'()'} onClick={() => {setText(addParenthesis(text))}}/>
                 <CalculatorButton buttonType={ButtonType.symbols} text={'%'} onClick={() => {setText(text + '%')}} />
                 <CalculatorButton buttonType={ButtonType.symbols} text={'÷'} onClick={() => {setText(text + '÷')}} />
 
