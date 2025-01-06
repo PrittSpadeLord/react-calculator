@@ -1,0 +1,14 @@
+:root {
+    --calculator-background-color: #D26914;
+}
+
+.calculator {
+    width: 272px;
+    height: 461px;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: var(--calculator-background-color);
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -7,8 +7,10 @@ export enum ButtonType {
     equals = 'equals'
 }
 
-export default function CalculatorButton({ buttonType, children }: { buttonType: ButtonType, children: ReactNode}): ReactElement {
+export default function CalculatorButton({ buttonType, children }: { buttonType: ButtonType, children?: ReactNode}): ReactElement {
     return (
-        <div className={`calculator-button calculator-button-${buttonType}`}>{children}</div>
+        <button className={`calculator-button calculator-button-${buttonType}`}>{children}</button>
     )
+
+    //Usage: <CalculatorButton buttonType={ButtonType.symbols}>C</CalculatorButton>
 }

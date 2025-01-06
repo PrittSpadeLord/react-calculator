@@ -1,9 +1,12 @@
 @import './normalize.css';
 
 body {
+    width: 100vw;
+    height: 100vh;
     font-family: Calibri;
     font-size: 34px;
     font-weight: bold;
-    padding: 0px 7px;
-    background-color: #D26914; /* will be removed later and added to calculator background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
