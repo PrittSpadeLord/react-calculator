@@ -3,14 +3,13 @@ import CalculatorBackground from './components/CalculatorBackground/CalculatorBa
 import CalculatorButton, { ButtonType } from './components/CalculatorButton/CalculatorButton'
 import CalculatorScreen from './components/CalculatorScreen/CalculatorScreen'
 
+export function formatText(text: string): string {
+    return text.replace(/\+/g, ' + ').replace(/−/g, ' − ').replace(/×/g, ' × ').replace(/÷/g, ' ÷ ').replace(/=/, '= ')
+}
+
 export default function App() {
 
     const [text, setText] = useState('')
-
-    function formatText(text: string): string {
-
-        return text.replace(/\+/g, ' + ').replace(/−/g, ' − ').replace(/×/g, ' × ').replace(/÷/g, ' ÷ ')
-    }
 
     return (
         <>
