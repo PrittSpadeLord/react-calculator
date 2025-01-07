@@ -7,12 +7,6 @@ export function formatText(text: string): string {
     return text.replace(/\+/g, ' + ').replace(/−/g, ' − ').replace(/×/g, ' × ').replace(/÷/g, ' ÷ ').replace(/=/, '= ')
 }
 
-export function addParenthesis(text: string): string {
-
-    //needs to be implemented further
-    return text
-}
-
 export function evaluateText(text: string): string {
 
     //needs to be implemented further
@@ -29,8 +23,8 @@ export default function App() {
                 <CalculatorScreen text={formatText(text)}/>
 
                 <CalculatorButton buttonType={ButtonType.symbols} text={'C'} onClick={() => {setText(text.startsWith('=') ? '' : text.substring(0, text.length - 1))}} />
-                <CalculatorButton buttonType={ButtonType.symbols} text={'()'} onClick={() => {setText(addParenthesis(text))}}/>
-                <CalculatorButton buttonType={ButtonType.symbols} text={'%'} onClick={() => {setText(text + '%')}} />
+                <CalculatorButton buttonType={ButtonType.symbols} text={'('} onClick={() => {setText(text + '(')}}/>
+                <CalculatorButton buttonType={ButtonType.symbols} text={')'} onClick={() => {setText(text + ')')}} />
                 <CalculatorButton buttonType={ButtonType.symbols} text={'÷'} onClick={() => {setText(text + '÷')}} />
 
                 <CalculatorButton buttonType={ButtonType.numeric} text={'7'} onClick={() => {setText(text + '7')}} />
@@ -48,9 +42,9 @@ export default function App() {
                 <CalculatorButton buttonType={ButtonType.numeric} text={'3'} onClick={() => {setText(text + '3')}} />
                 <CalculatorButton buttonType={ButtonType.symbols} text={'+'} onClick={() => {setText(text + '+')}} />
 
-                <CalculatorButton buttonType={ButtonType.numeric} text={'+/-'} />
+                <CalculatorButton buttonType={ButtonType.symbols} text={'%'} onClick={() => {setText(text + '%')}}/>
                 <CalculatorButton buttonType={ButtonType.numeric} text={'0'} onClick={() => {setText(text + '0')}} />
-                <CalculatorButton buttonType={ButtonType.numeric} text={'.'} onClick={() => {setText(text + '.')}} />
+                <CalculatorButton buttonType={ButtonType.symbols} text={'.'} onClick={() => {setText(text + '.')}} />
                 <CalculatorButton buttonType={ButtonType.equals} text={'='} onClick={() => {setText(evaluateText(text))}} />
 
             </CalculatorBackground>

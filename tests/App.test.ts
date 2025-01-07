@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { formatText, addParenthesis, evaluateText } from '../src/App'
+import { formatText, evaluateText } from '../src/App'
 
 describe('formatText', () => {
     //with how the function is implemented, it is impossible to add spaces to the input text, so we dont have to worry about that
@@ -32,10 +32,6 @@ describe('formatText', () => {
         expect(formatText('3+(4×5)')).toBe('3 + (4 × 5)')
     })
 })
-
-// describe('addParenthesis', () => {
-    
-// })
 
 // describe('evaluateText', () => {
     
