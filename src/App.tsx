@@ -3,18 +3,18 @@ import CalculatorBackground from './components/CalculatorBackground/CalculatorBa
 import CalculatorButton, { ButtonType } from './components/CalculatorButton/CalculatorButton'
 import CalculatorScreen from './components/CalculatorScreen/CalculatorScreen'
 
-export function formatText(text: string): string {
-    return text.replace(/\+/g, ' + ').replace(/-/g, ' − ').replace(/\*/g, ' × ').replace(/\//g, ' ÷ ').replace(/=/, '= ')
+export function formatExpression(expression: string): string {
+    return expression.replace(/\+/g, ' + ').replace(/-/g, ' − ').replace(/\*/g, ' × ').replace(/\//g, ' ÷ ').replace(/=/, '= ')
 }
 
-export function appendSymbol(text: string, symbol: string) {
-    return text.indexOf('Error') >= 0 ? symbol : text + symbol
+export function appendSymbol(expression: string, symbol: string) {
+    return expression.indexOf('Error') >= 0 ? symbol : expression + symbol
 }
 
-export function evaluateText(text: string): string {
+export function evaluateExpression(expression: string): string {
 
     try {
-        const res: number = eval(text)+0
+        const res: number = eval(expression)+0
 
         if(Number.isNaN(res)) {
             return 'Error'
@@ -34,37 +34,38 @@ export function evaluateText(text: string): string {
 
 export default function App() {
 
-    const [text, setText] = useState('')
+    const [expression, setExpression] = useState('')
 
     return (
         <>
             <CalculatorBackground>
-                <CalculatorScreen text={formatText(text)}/>
+                <CalculatorScreen expression={formatExpression
+                (expression)}/>
 
-                <CalculatorButton buttonType={ButtonType.symbols} text={'C'} onClick={() => {setText(text.indexOf('Error') >= 0 ? '' : text.substring(0, text.length - 1))}} />
-                <CalculatorButton buttonType={ButtonType.symbols} text={'('} onClick={() => {setText(appendSymbol(text, '('))}}/>
-                <CalculatorButton buttonType={ButtonType.symbols} text={')'} onClick={() => {setText(appendSymbol(text, ')'))}} />
-                <CalculatorButton buttonType={ButtonType.symbols} text={'÷'} onClick={() => {setText(appendSymbol(text, '/'))}} />
+                <CalculatorButton buttonType={ButtonType.symbols} expression={'C'} onClick={() => {setExpression(expression.indexOf('Error') >= 0 ? '' : expression.substring(0, expression.length - 1))}} />
+                <CalculatorButton buttonType={ButtonType.symbols} expression={'('} onClick={() => {setExpression(appendSymbol(expression, '('))}}/>
+                <CalculatorButton buttonType={ButtonType.symbols} expression={')'} onClick={() => {setExpression(appendSymbol(expression, ')'))}} />
+                <CalculatorButton buttonType={ButtonType.symbols} expression={'÷'} onClick={() => {setExpression(appendSymbol(expression, '/'))}} />
 
-                <CalculatorButton buttonType={ButtonType.numeric} text={'7'} onClick={() => {setText(appendSymbol(text, '7'))}} />
-                <CalculatorButton buttonType={ButtonType.numeric} text={'8'} onClick={() => {setText(appendSymbol(text, '8'))}} />
-                <CalculatorButton buttonType={ButtonType.numeric} text={'9'} onClick={() => {setText(appendSymbol(text, '9'))}} />
-                <CalculatorButton buttonType={ButtonType.symbols} text={'×'} onClick={() => {setText(appendSymbol(text, '*'))}} />
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'7'} onClick={() => {setExpression(appendSymbol(expression, '7'))}} />
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'8'} onClick={() => {setExpression(appendSymbol(expression, '8'))}} />
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'9'} onClick={() => {setExpression(appendSymbol(expression, '9'))}} />
+                <CalculatorButton buttonType={ButtonType.symbols} expression={'×'} onClick={() => {setExpression(appendSymbol(expression, '*'))}} />
 
-                <CalculatorButton buttonType={ButtonType.numeric} text={'4'} onClick={() => {setText(appendSymbol(text, '4'))}} />
-                <CalculatorButton buttonType={ButtonType.numeric} text={'5'} onClick={() => {setText(appendSymbol(text, '5'))}} />
-                <CalculatorButton buttonType={ButtonType.numeric} text={'6'} onClick={() => {setText(appendSymbol(text, '6'))}} />
-                <CalculatorButton buttonType={ButtonType.symbols} text={'−'} onClick={() => {setText(appendSymbol(text, '-'))}} />
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'4'} onClick={() => {setExpression(appendSymbol(expression, '4'))}} />
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'5'} onClick={() => {setExpression(appendSymbol(expression, '5'))}} />
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'6'} onClick={() => {setExpression(appendSymbol(expression, '6'))}} />
+                <CalculatorButton buttonType={ButtonType.symbols} expression={'−'} onClick={() => {setExpression(appendSymbol(expression, '-'))}} />
 
-                <CalculatorButton buttonType={ButtonType.numeric} text={'1'} onClick={() => {setText(appendSymbol(text, '1'))}} />
-                <CalculatorButton buttonType={ButtonType.numeric} text={'2'} onClick={() => {setText(appendSymbol(text, '2'))}} />
-                <CalculatorButton buttonType={ButtonType.numeric} text={'3'} onClick={() => {setText(appendSymbol(text, '3'))}} />
-                <CalculatorButton buttonType={ButtonType.symbols} text={'+'} onClick={() => {setText(appendSymbol(text, '+'))}} />
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'1'} onClick={() => {setExpression(appendSymbol(expression, '1'))}} />
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'2'} onClick={() => {setExpression(appendSymbol(expression, '2'))}} />
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'3'} onClick={() => {setExpression(appendSymbol(expression, '3'))}} />
+                <CalculatorButton buttonType={ButtonType.symbols} expression={'+'} onClick={() => {setExpression(appendSymbol(expression, '+'))}} />
 
-                <CalculatorButton buttonType={ButtonType.symbols} text={'%'} onClick={() => {/*setText(text + '%')*/}}/>
-                <CalculatorButton buttonType={ButtonType.numeric} text={'0'} onClick={() => {setText(appendSymbol(text, '0'))}} />
-                <CalculatorButton buttonType={ButtonType.symbols} text={'.'} onClick={() => {setText(appendSymbol(text, '.'))}} />
-                <CalculatorButton buttonType={ButtonType.equals} text={'='} onClick={() => {setText(evaluateText(text))}} />
+                <CalculatorButton buttonType={ButtonType.symbols} expression={'%'} onClick={() => {/*setExpression(expression + '%')*/}}/>
+                <CalculatorButton buttonType={ButtonType.numeric} expression={'0'} onClick={() => {setExpression(appendSymbol(expression, '0'))}} />
+                <CalculatorButton buttonType={ButtonType.symbols} expression={'.'} onClick={() => {setExpression(appendSymbol(expression, '.'))}} />
+                <CalculatorButton buttonType={ButtonType.equals} expression={'='} onClick={() => {setExpression(evaluateExpression(expression))}} />
 
             </CalculatorBackground>
         </>

@@ -1,9 +1,9 @@
 import { ReactElement } from 'react'
 import './CalculatorScreen.css'
 
-export default function CalculatorScreen({ text }: { text?: string }): ReactElement {
+export default function CalculatorScreen({ expression }: { expression: string }): ReactElement {
     return (
-        <div className="calculator-screen">{ text }</div>
+        <div className="calculator-screen">{ expression }</div>
     )
 
     //Usage: <CalculatorScreen text={'9+28'} />
