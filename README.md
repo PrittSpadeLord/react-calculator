@@ -1,7 +1,20 @@
-## Need to update README.md
+## Sample Calculator App
 
-Here is a code block, just for fun!
+After cloning the repository, install dependencies using:
 
-```js
-console.log('Hello, World!')
 ```
+npm i
+```
+
+In order to run the application:
+
+```
+npm run dev
+```
+
+To check test cases:
+
+```
+npm test
+```
+
